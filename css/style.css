@@ -1,0 +1,153 @@
+body {
+  /*清除預設邊距*/
+  margin: 0;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+/*顏色字體設定*/
+:root {
+  /*顏色變數*/
+  --color-white: #ffffff;
+  --color-blue: #4338ca;
+  --color-black: #171717;
+  --color-grey: #525252;
+  --color-light-grey: #f9fafb;
+  --color-lightest-grey: #edf0f3;
+  /*字體*/
+  --font--size-sm: 0.875rem; /* 14px - 小字 */
+  --font-size-base: 1rem; /* 16px - 基準字體 */
+  --font-size-lg: 1.125rem; /* 18px - 較大字體 */
+
+  /*間距*/
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 3rem; /* 48px */
+
+  /*陰影效果 */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*navbar樣式設定*/
+.navbar {
+  background-color: var(--color-white); /* 白色背景 */
+  border-bottom: 1px solid var(--color-lightest-grey); /* 底部淡邊框 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-sm) 0; /* 上下內距 */
+}
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto; /* 水平置中 */
+  padding: 0 var(--spacing-md); /* 左右內距 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 垂直置中 */
+}
+/*navbar logo設定*/
+.navbar .container .logo {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: var(--font-size-lg); /* 較大字體 */
+  color: var(--color-blue);
+}
+
+/*navbar的導覽區域*/
+.navbar .container .nav-menu ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none; /*移除items符號*/
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-lg);
+}
+.navbar .container .nav-menu li {
+  position: relative; /* 為了後面的 hover 底線效果*/
+}
+
+/*navbar的連結樣式*/
+.navbar .container .nav-menu a {
+  display: block;
+  color: var(--color-grey);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  transition: color 0.3s ease; /*設定hover顏色轉換*/
+}
+/*滑鼠靠近連結時會產生底線*/
+.navbar .container .nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0; /*先隱藏*/
+  height: 4px;
+  background-color: var(--color-blue);
+  transition: width 0.3s ease; /*寬度變化*/
+}
+.navbar .container .nav-menu a:hover {
+  color: var(--color-black); /*滑鼠靠近時顏色變深色*/
+}
+/*滑鼠靠近連結時會產生底線*/
+.navbar .container .nav-menu a:hover::after {
+  width: 100%; /*相對於li元素*/
+}
+
+/*navbar的右側action區域*/
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+/*購物車樣式*/
+/*購物車容器*/
+.nav-actions .cart-container {
+  position: relative; /* 為購物車數量提供定位參考 */
+}
+/* 購物車按鈕 */
+.nav-actions .cart-container .cart-btn {
+  background: none; /* 移除預設背景 */
+  border: none; /* 移除預設邊框 */
+  cursor: pointer; /* 滑鼠指標變成手指 */
+  padding: var(--spacing-xs); /* 增加點擊區域 */
+}
+
+/*購物車svg設定*/
+.nav-actions .cart-container .cart-btn svg {
+  fill: var(--color-grey); /* 預設灰色填充 */
+  transition: fill 0.3s ease;
+}
+.nav-actions .cart-container .cart-btn:hover svg {
+  fill: var(--color-black);
+}
+/* 使用者頭像區域 */
+.nav-actions button:last-child {
+  background: none; /* 移除預設背景 */
+  border: none; /* 移除預設邊框 */
+  cursor: pointer; /* 滑鼠指標變手指 */
+  padding: 0; /* 移除預設內距 */
+}
+/* 使用者頭像圖片 */
+.nav-actions button img {
+  width: 50px; /* 根據 Figma 設計稿 */
+  height: 50px;
+  border-radius: 50%; /* 圓形頭像 */
+  border: 2px solid transparent; /* 預設透明邊框 */
+  transition: border-color 0.3s ease; /* 邊框顏色動畫 */
+  object-fit: cover; /* 確保圖片比例正確 */
+}
+/* 頭像hover設定 */
+.nav-actions button:hover img {
+  border-color: var(--color-blue); /* hover 時顯示藍色邊框 */
+}
+
+/*navBar 整體layout*/

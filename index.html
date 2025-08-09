@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E-commerce: NavBar</title>
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--favicon-->
+    <link rel="icon" href="img/favicon.ico" sizes="any" />
+  </head>
+  <body>
+    <!--nav bar-->
+    <nav class="navbar">
+      <div class="container">
+        <!--左側logo-->
+        <div class="logo">Code & Speak</div>
+        <!--中間導航選單-->
+        <div class="nav-menu">
+          <ul>
+            <li class="nav-item"><a href="#">Shop All</a></li>
+            <li class="nav-item"><a href="#">Women</a></li>
+            <li class="nav-item"><a href="#">Men</a></li>
+            <li class="nav-item"><a href="#">Kids</a></li>
+            <li class="nav-item"><a href="#">Pets</a></li>
+          </ul>
+        </div>
+        <!--右側功能區-->
+        <div class="nav-actions">
+          <!--購物車-->
+          <div class="cart-container">
+            <button class="cart-btn">
+              <!-- 使用 Normal 狀態的購物車圖示 -->
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.50488 2H17.5049C17.8196 2 18.116 2.14819 18.3049 2.4L21.0049 6V21C21.0049 21.5523 20.5572 22 20.0049 22H4.00488C3.4526 22 3.00488 21.5523 3.00488 21V6L5.70488 2.4C5.89374 2.14819 6.19013 2 6.50488 2ZM19.0049 8H5.00488V20H19.0049V8ZM18.5049 6L17.0049 4H7.00488L5.50488 6H18.5049ZM9.00488 10V12C9.00488 13.6569 10.348 15 12.0049 15C13.6617 15 15.0049 13.6569 15.0049 12V10H17.0049V12C17.0049 14.7614 14.7663 17 12.0049 17C9.24346 17 7.00488 14.7614 7.00488 12V10H9.00488Z"
+                  fill="#525252"
+                />
+              </svg>
+              <!-- 數量徽章先隱藏 -->
+              <span class="cart-count" style="display: none">0</span>
+            </button>
+          </div>
+          <!--用戶頭貼-->
+          <button>
+            <img src="./img/user_avatar.png" alt="user avatar" />
+          </button>
+        </div>
+      </div>
+    </nav>
+    <script src="js/index.js"></script>
+  </body>
+</html>
